@@ -1,7 +1,7 @@
-from src import masks
+from src import widget
 
 print_num_account = int(input())
 print_num_card = int(input())
 
-print(masks.get_mask_account(print_num_account))
-print(masks.get_mask_card_number(print_num_card))
+print(widget.mask_account_card(print_num_account))
+print(widget.get_date(print_num_card))
