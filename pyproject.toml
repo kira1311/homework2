@@ -24,13 +24,14 @@ mypy = "^1.14.1"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.4"
+pytest-cov = "^6.0.0"
 
 [tool.black]
 line-length = 119
 exclude = ".git"
 
 [tool.isort]
-line-length = 119
+line_length = 119
 
 [tool.mypu]
 disallow_untyped_defs = true

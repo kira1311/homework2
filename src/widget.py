@@ -17,8 +17,7 @@ def mask_account_card(acc: str) -> str:
 
     return f"{name_card} {masked_number}".strip()
 
+
 def get_date(date: str) -> str:
     date_form = f"{date[8:10]+'.'+date[5:7]+'.'+date[2:4]}"
     return date_form
-
-

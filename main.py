@@ -1,4 +1,4 @@
-from src import widget, processing
+from src import processing, widget
 
 print_num_account = input()
 input_date = input()

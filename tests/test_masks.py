@@ -1,6 +1,8 @@
-from src import masks
-import pytest
 from typing import Any
+
+import pytest
+
+from src import masks
 
 
 def test_get_mask_card_number() -> Any:
