@@ -12,6 +12,7 @@ def transaction_descriptions(transactions):
         transaction.get("description") for transaction in transactions
     )
 
+
 def form_number(number):
     """Форматирование числа в строку с пробелами через 4 цифры"""
     st = ''
@@ -29,6 +30,5 @@ def card_number_generator(start, finish):
     """Тесты, которые проверяют, что генератор выдает правильные номера карт в заданном диапазоне"""
     for i in range(start, finish + 1):
         yield form_number(i)
-
 
 print(card_number_generator(1,5))
