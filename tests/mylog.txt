@@ -1,0 +1,22 @@
+my_function error: TypeError, ((1, 2), {}), {}
+my_function error: TypeError, ((1, 2), {}), {}
+my_function error: TypeError, ((1, 2), {}), {}
+my_function error: TypeError, ((1, 2), {}), {}
+my_function error: TypeError, ((1, 2), {}), {}
+my_function error: TypeError, ((1, 2), {}), {}
+my_function error: TypeError, ((1, 2), {}), {}
+my_function error: TypeError, ((1, 2), {}), {}
+my_function error: TypeError, ((1, 2), {}), {}
+my_function error: TypeError, ((1, 2), {}), {}
+my_function error: TypeError, ((1, 2), {}), {}
+my_function error: TypeError, ((1, 2), {}), {}
+my_function error: TypeError, ((1, 2), {}), {}
+my_function error: TypeError, ((1, 2), {}), {}
+/nmy_function error: TypeError, ((1, 2), {}), {}
+/nmy_function error: TypeError, ((1, 2), {}), {}
+/nmy_function error: TypeError, ((1, 2), {}), {}
+/nmy_function error: TypeError, ((1, 2), {}), {}
+my_function error: TypeError. Inputs: ((1, 2), {}), {}
+my_function error: TypeError. Inputs: ((1, 2), {}), {}
+my_function error: TypeError. Inputs: ((1, 2), {}), {}
+my_function error: TypeError. Inputs: ((1, 2), {}), {}
