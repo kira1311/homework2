@@ -1,7 +1,0 @@
-my_function error: TypeError. Inputs: ((1, 2), {}), {}
-my_function error: TypeError. Inputs: ((1, 2), {}), {}
-my_function error: TypeError. Inputs: ((1, 2), {}), {}
-my_function error: TypeError. Inputs: ((1, 2), {}), {}
-my_function error: TypeError. Inputs: ((1, 2), {}), {}
-my_function error: TypeError. Inputs: ((1, 2), {}), {}
-my_function error: TypeError. Inputs: ((1, 2), {}), {}

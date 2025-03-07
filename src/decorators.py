@@ -14,7 +14,7 @@ def log(filename=None):
                 result = func(*args, **kwargs)
                 log_message = f"{func.__name__} ok"
                 if filename:
-                    with open(filename, 'a') as f:
+                    with open(filename, 'w') as f:
                         f.write(log_message + "\n")
                 else:
                     print(log_message)
@@ -24,7 +24,7 @@ def log(filename=None):
                 error_message = (f"{func.__name__} error: {type(e).__name__}."
                                  f" Inputs: {args}, {kwargs}")
                 if filename:
-                    with open(filename, 'a') as f:
+                    with open(filename, 'w') as f:
                         f.write(error_message + '\n')
                 else:
                     print(error_message)
@@ -47,3 +47,6 @@ def error_function(x, y):
     if y == 0:
         raise ValueError
     return x / y
+
+error_function(12, 12)
+my_function(12, 12)
