@@ -18,7 +18,6 @@ def log(filename=None):
                         f.write(log_message + "\n")
                 else:
                     print(log_message)
-                print(log_message)
                 return result
 
             except Exception as e:
