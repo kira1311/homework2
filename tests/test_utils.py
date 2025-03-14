@@ -13,7 +13,7 @@ def read_operations_from_json(file_path):
         if isinstance(data, list):
             return data
         return []
-    except Exception as e:
+    except:
         return []
 
 
