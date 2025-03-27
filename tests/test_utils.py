@@ -13,7 +13,17 @@ def read_operations_from_json(file_path):
         if isinstance(data, list):
             return data
         return []
-    except:
+    except FileNotFoundError:
+        # Возникает, если файл не найден
+        return []
+
+    except json.JSONDecodeError:
+        # Возникает, если файл не может быть расшифрован как JSON
+        return []
+
+    except Exception as e:
+        # Ловим все другие ошибки, если они возникнут
+        print(f"Произошла ошибка: {e}")
         return []
 
 
