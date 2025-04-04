@@ -15,7 +15,6 @@ def load_json(filename):
         print(f"Ошибка: файл '{filename}' не найден. Пожалуйста, проверьте путь к файлу.")
         return []
 
-
 def load_csv(filename):
     """Загрузка данных из CSV-файла"""
     try:
@@ -24,7 +23,6 @@ def load_csv(filename):
     except FileNotFoundError:
         print(f"Ошибка: файл '{filename}' не найден. Пожалуйста, проверьте путь к файлу.")
         return []
-
 
 def load_xlsx(filename):
     """Загрузка данных из XLSX-файла"""
@@ -35,12 +33,10 @@ def load_xlsx(filename):
         print(f"Ошибка: файл '{filename}' не найден. Пожалуйста, проверьте путь к файлу.")
         return []
 
-
 def search_transactions(transactions, search_str):
     """Фильтрация транзакций по строке в описании"""
     pattern = re.compile(search_str, re.IGNORECASE)
     return [transaction for transaction in transactions if pattern.search(transaction.get('description', ''))]
-
 
 def filter_by_state(transactions, state):
     """Фильтрация транзакций по состоянию"""
@@ -55,12 +51,9 @@ def filter_by_state(transactions, state):
             filtered_transactions.append(transaction)
     return filtered_transactions
 
-
-
 def sort_transactions(transactions, reverse=False):
     """Сортировка транзакций по дате"""
     return sorted(transactions, key=lambda x: x.get('date', ''), reverse=reverse)
-
 
 def main():
     """Функция обработки данных и взаимодействия с пользователем"""
@@ -163,7 +156,10 @@ def main():
                 mask_disc = mask_account_card(date.get("to"))
             if file_name == 1:
                 op_am = date.get("operationAmount")
-                summa = f"Сумма: {op_am.get('amount')} {op_am.get('currency').get('name')}"
+                if op_am and op_am.get("currency"):
+                    summa = f"Сумма: {op_am.get('amount')} {op_am.get('currency').get('name')}"
+                else:
+                    summa = "Сумма: Неизвестно"
             elif file_name == 2 or file_name == 3:
                 summa = f"Сумма: {date.get('amount')} {date.get('currency_code')}"
             if date.get("description") == "Открытие вклада":
