@@ -1,6 +1,2 @@
 my_function ok
 my_function ok
-my_function ok
-my_function ok
-my_function ok
-my_function ok/nmy_function okmy_function ok

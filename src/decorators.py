@@ -16,7 +16,9 @@ def log(filename=None):
                 if filename:
                     with open(filename, 'a') as f:
                         f.write(log_message + "\n")
-                print(log_message)
+                else:
+                    print(log_message)
+                return result
 
             except Exception as e:
                 error_message = (f"{func.__name__} error: {type(e).__name__}."
@@ -45,3 +47,7 @@ def error_function(x, y):
     if y == 0:
         raise ValueError
     return x / y
+
+
+error_function(12, 12)
+my_function(12, 12)

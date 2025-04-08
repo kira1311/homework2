@@ -1,6 +1,6 @@
 import pytest
 
-from src.decorators import error_function, log, my_function
+from src.decorators import error_function, my_function
 
 
 def test_error_function_type_error():

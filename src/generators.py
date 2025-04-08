@@ -31,4 +31,5 @@ def card_number_generator(start, finish):
     for i in range(start, finish + 1):
         yield form_number(i)
 
-print(card_number_generator(1,5))
+
+print(card_number_generator(1, 5))
