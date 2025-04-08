@@ -1,20 +1,14 @@
 import re
-from collections import Counter
 
+def sort_transactions(transactions: list, reverse=False) -> list:
+    """Сортировка списка транзакций по дате (или по другому критерию)."""
+    return sorted(transactions, key=lambda x: x.get('date'), reverse=reverse)
 
-def re_sort(list_transactions, search):
-    """Эта функция принимает список словарей с данными о банковских операциях и строку поиска,
-    а возвращает список словарей, у которых в описании есть данная строка."""
-    pattern = re.compile(search, re.IGNORECASE)
-    operations = [operations for operations in list_transactions if pattern.search(operations.get("description", ""))]
-    return operations
+def filter_by_currency(transactions: list, currency_code: str) -> list:
+    """Фильтрация транзакций по валюте."""
+    return [t for t in transactions if t.get('currency_code') == currency_code]
 
-
-def count_category_dict(operations, category_op):
-    """Эта функция принимает список словарей с данными о банковских операциях и список категорий операций, а возвращает
-     словарь."""
-    descriptions = [op.get("description", "") for op in operations]
-    counted = Counter()
-    for category in category_op:
-        counted[category] = sum(category in desc for desc in descriptions)
-    return dict(counted)
+def search_transactions(transactions: list, search_str: str) -> list:
+    """Фильтрация по слову (подстроке) в описании."""
+    pattern = re.compile(search_str, re.IGNORECASE)
+    return [t for t in transactions if pattern.search(t.get('description', ''))]

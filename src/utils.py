@@ -1,40 +1,26 @@
-import logging
-import os
 import json
+from typing import List, Dict, Any
 
+def read_operations_from_json(filename: str) -> List[Dict[str, Any]]:
+    """
+    Читает данные из JSON-файла и возвращает их в виде списка словарей.
+    """
+    with open(filename, 'r', encoding='utf-8') as file:
+        data = json.load(file)
+    return data
 
-if not os.path.exists('logs'):
-    os.makedirs('logs')
+def get_date(date_str: str) -> str:
+    """
+    Преобразует дату к нужному формату (или просто возвращает, 
+    если не нужно менять).
+    """
+    return date_str
 
-logger = logging.getLogger('utils')
-logger.setLevel(logging.DEBUG)
-
-file_handler = logging.FileHandler('logs/utils.log', mode='w')
-logger.setLevel(logging.DEBUG)
-
-file_formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-file_handler.setFormatter(file_formatter)
-
-logger.addHandler(file_handler)
-
-
-def read_operations_from_json(file_path):
-    """ Если файл не существует, сразу возвращаем пустой список"""
-    logger.info(f"загрузка транзакций из файла {data_path}")
-    if not os.path.exists(file_path):
-        logger.error(f"файл {data_path} не найден")
-        return []
-
-    try:
-        with open(file_path, 'r', encoding='utf-8') as file:
-            data = json.load(file)
-        if isinstance(data, list):
-            logger.info(f"файл {data_path} загружен успешно")
-            return data
-        return []
-    except:
-        return []
-
-
-data_path = 'data/operations.json'
-print(read_operations_from_json(data_path))
+def mask_account_card(card_str: str) -> str:
+    """
+    Маскирует номер карты/счёта (например, оставить первые 4 и последние 4 цифры).
+    """
+    if not card_str:
+        return "Неизвестная карта/счет"
+    # Пример: "1234 56** **** 7890" или любая другая логика маскировки
+    return card_str[:4] + "..." + card_str[-4:]
